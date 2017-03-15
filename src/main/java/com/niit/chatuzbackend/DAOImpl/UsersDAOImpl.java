@@ -12,8 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.chatuzbackend.DAO.UsersDAO;
 import com.niit.chatuzbackend.model.Users;
 
-
-
 @Repository
 public class UsersDAOImpl implements UsersDAO {
 	@Autowired
@@ -76,13 +74,14 @@ public class UsersDAOImpl implements UsersDAO {
 
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Users> list = query.list();
-		/*
-		 * if (list == null) { return null; } else {
-		 */
-		return list.get(0);
-
+		if (list.isEmpty()) {
+			return null;	
+			}
+		else {
+			return list.get(0);
+		}
 	}
-
+	
 	@SuppressWarnings({ "rawtypes", "deprecation", "unchecked" })
 	@Transactional
 	public Users oneuser(int id) {
@@ -91,7 +90,7 @@ public class UsersDAOImpl implements UsersDAO {
 
 		List<Users> list = query.list();
 
-		if (list == null) {
+		if (list.isEmpty()) {
 			return null;
 		} else {
 			return list.get(0);
@@ -114,7 +113,7 @@ public class UsersDAOImpl implements UsersDAO {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Users> list = query.list();
 
-		if (list == null) {
+		if (list.isEmpty()) {
 			return null;
 		} else {
 			return list.get(0);

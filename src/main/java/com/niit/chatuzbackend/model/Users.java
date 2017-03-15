@@ -27,6 +27,7 @@ public class Users {
 	private char status;
 	private char isonline;
 	private byte[] image;
+	public String errorCode;
 
 	public char getIsonline() {
 		return isonline;
@@ -122,6 +123,16 @@ public class Users {
 
 	public void setStatus(char status) {
 		this.status = status;
+	}
+
+	public String getErrorCode() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setErrorCode(String string) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
