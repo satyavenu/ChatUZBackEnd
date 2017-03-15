@@ -92,7 +92,7 @@ public class ApplicationContextConfig {
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
-		System.out.println("Transaction is crated............!");
+		System.out.println("Transaction is created............!");
 		return transactionManager;
 	}
 
